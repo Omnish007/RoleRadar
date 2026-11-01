@@ -1,0 +1,32 @@
+{
+  "name": "roleradar",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.20.0",
+  "scripts": {
+    "dev": "pnpm --filter @roleradar/contracts build && pnpm --parallel --filter @roleradar/desktop --filter @roleradar/api dev",
+    "dev:infra": "docker compose up -d",
+    "dev:desktop": "pnpm --filter @roleradar/contracts build && pnpm --filter @roleradar/desktop dev",
+    "dev:api": "pnpm --filter @roleradar/api start:dev",
+    "dev:ai": "cd apps/ai-service && .venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8010 --reload",
+    "build": "pnpm -r --if-present build",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "lint": "pnpm -r --if-present lint",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,md,yml,css}\"",
+    "dev:all": "pnpm dev:infra && pnpm --filter @roleradar/contracts build && pnpm --parallel --filter @roleradar/desktop --filter @roleradar/api dev",
+    "check:lines": "node scripts/check-file-lengths.cjs",
+    "check:python": "python -m compileall -q apps/ai-service/app",
+    "check:workspace": "node scripts/check-workspace.cjs",
+    "check:client": "node scripts/check-client-api.cjs",
+    "quality": "pnpm typecheck && pnpm test && pnpm check:python && pnpm check:lines && pnpm check:workspace && pnpm check:client",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md,yml,css}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=22.22.3 <23 || >=24.15.0 <25 || >=26",
+    "pnpm": ">=10.20.0"
+  }
+}

@@ -1,0 +1,31 @@
+appId: com.roleradar.desktop
+productName: RoleRadar
+artifactName: ${productName}-${version}-${arch}.${ext}
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**/*
+  - package.json
+  - '!**/*.map'
+linux:
+  category: Utility
+  icon: build/icons/
+  target:
+    - AppImage
+    - deb
+  synopsis: Local-first cross-platform job search workspace
+  description: Build platform-aware job searches and manage job opportunities locally.
+mac:
+  icon: build/icon.icns
+win:
+  icon: build/icon.ico
+extraResources:
+  - from: build/icon.png
+    to: app-icon.png
+  - from: ../../docker-compose.yml
+    to: infra/docker-compose.yml
+  - from: sidecar/api
+    to: backend/api
+  - from: sidecar/ai-service/roleradar-ai
+    to: backend/ai-service/roleradar-ai

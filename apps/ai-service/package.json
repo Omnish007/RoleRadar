@@ -1,0 +1,10 @@
+{
+  "name": "@roleradar/ai-service",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "python -m pytest -q",
+    "lint": "python -m compileall -q app",
+    "dev": ".venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8010 --reload"
+  }
+}

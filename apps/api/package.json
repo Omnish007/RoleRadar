@@ -1,0 +1,46 @@
+{
+  "name": "@roleradar/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nest start --watch",
+    "start:dev": "pnpm --filter @roleradar/contracts build && nest start --watch",
+    "build": "pnpm --filter @roleradar/contracts build && nest build",
+    "start": "node dist/main.js",
+    "typecheck": "pnpm --filter @roleradar/contracts build && tsc --noEmit -p tsconfig.json",
+    "lint": "pnpm typecheck",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@nestjs/bullmq": "^12.0.0",
+    "@nestjs/common": "^12.3.2",
+    "@nestjs/config": "^12.0.1",
+    "@nestjs/core": "^12.3.2",
+    "@nestjs/mongoose": "^12.0.0",
+    "@nestjs/platform-express": "^12.3.2",
+    "bullmq": "^5.81.5",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "ioredis": "^5.6.1",
+    "mongoose": "^9.9.3",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "zod": "^3.25.76",
+    "@roleradar/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^12.0.11",
+    "@nestjs/schematics": "^12.0.0",
+    "@nestjs/testing": "^12.3.2",
+    "@types/node": "^22.19.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.2"
+  },
+  "main": "dist/main.js",
+  "files": [
+    "dist",
+    "package.json"
+  ]
+}

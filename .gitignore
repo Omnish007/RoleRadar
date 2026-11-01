@@ -1,0 +1,22 @@
+node_modules
+dist
+out
+.env
+.env.*
+!.env.example
+.venv
+__pycache__
+.pytest_cache
+coverage
+*.log
+.DS_Store
+
+# Generated application assets
+apps/desktop/sidecar/api
+apps/desktop/sidecar/ai-service
+.build
+apps/desktop/release
+apps/desktop/node_modules
+apps/api/node_modules
+apps/ai-service/.pytest_cache
+*.py[cod]

@@ -1,0 +1,61 @@
+/* Guided search setup: clear hierarchy, deliberate pacing and no change to the search contract. */
+.search-form-panel { align-self: start; }
+.search-form-panel .ai-entry { margin-bottom: 20px; }
+.search-form-panel .ai-entry-title { display: flex; align-items: center; gap: 8px; }
+.ai-entry-badge { margin-left: auto; padding: 4px 7px; border: 1px solid #dfe7f2; border-radius: 5px; color: #506582; background: #f7f9fc; font-size: 9px; font-weight: 650; letter-spacing: .35px; text-transform: uppercase; }
+.workflow-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; margin: 3px 0 15px; }
+.workflow-eyebrow { color: #748091; font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+.workflow-heading h2 { margin: 5px 0 4px; color: #20242b; font-size: 19px; font-weight: 650; letter-spacing: -.45px; }
+.workflow-heading p { margin: 0; color: #748091; font-size: 11px; line-height: 1.5; }
+.workflow-count { flex: 0 0 auto; color: #263f66; font-size: 12px; font-weight: 700; letter-spacing: .6px; font-variant-numeric: tabular-nums; }
+.workflow-count i { margin: 0 3px; color: #a3acb8; font-style: normal; }
+.workflow-progress { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; height: 3px; margin-bottom: 12px; }
+.workflow-progress span { border-radius: 10px; background: #e9edf2; }
+.workflow-progress span.complete { background: #245fce; }
+.search-stepper { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; margin: 0 0 22px; padding: 0 0 14px; border-bottom: 1px solid #edf0f3; }
+.search-step { display: flex; min-width: 0; align-items: center; gap: 7px; padding: 7px 5px; border: 1px solid transparent; border-radius: 8px; color: #66717d; background: transparent; text-align: left; transition: background .15s ease, border-color .15s ease, color .15s ease; }
+.search-step:hover { background: #f7f9fc; }
+.search-step.active { border-color: #dce6f5; color: #244f98; background: #f3f7fd; }
+.search-step.complete .search-step-icon { border-color: #cbd9ef; color: #245fce; background: #eef3fb; }
+.search-step-icon { display: grid; width: 27px; height: 27px; flex: 0 0 27px; place-items: center; border: 1px solid #e2e7ed; border-radius: 50%; color: #778292; background: #fff; }
+.search-step.active .search-step-icon { border-color: #245fce; color: #fff; background: #245fce; }
+.search-step-copy { display: grid; min-width: 0; gap: 2px; }
+.search-step-copy strong { overflow: hidden; color: inherit; font-size: 10px; font-weight: 650; text-overflow: ellipsis; white-space: nowrap; }
+.search-step-copy small { overflow: hidden; color: #87919e; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.step-content { min-height: 340px; animation: step-enter .18s ease both; }
+.step-content-heading { margin-bottom: 17px; }
+.step-content-heading > span { color: #7c8795; font-size: 9px; font-weight: 700; letter-spacing: .9px; }
+.step-content-heading h3 { margin: 4px 0 4px; color: #20242b; font-size: 15px; font-weight: 650; letter-spacing: -.2px; }
+.step-content-heading p { margin: 0; color: #788392; font-size: 11px; line-height: 1.5; }
+.step-content .field { margin-bottom: 16px; }
+.step-content .field-grid { column-gap: 13px; }
+.step-inline-note { display: flex; align-items: flex-start; gap: 8px; margin-top: 4px; padding: 11px 12px; border: 1px solid #e8edf4; border-radius: 8px; color: #65748a; background: #f8fafc; font-size: 10px; line-height: 1.55; }
+.step-inline-note svg { flex: 0 0 auto; color: #5375ab; }
+.stepper-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 19px; padding-top: 15px; border-top: 1px solid #edf0f3; }
+.step-footer-note { display: grid; min-width: 0; gap: 4px; }
+.step-footer-note strong { color: #374354; font-size: 10px; font-weight: 650; }
+.step-footer-note span { color: #87919e; font-size: 9px; line-height: 1.45; }
+.step-footer-actions { display: flex; flex: 0 0 auto; align-items: center; gap: 7px; }
+.step-footer-actions .button { height: 36px; white-space: nowrap; }
+.step-validation-error { margin-top: 12px; padding: 10px 12px; border: 1px solid #f1d4d1; border-radius: 7px; color: #9a332d; background: #fff5f4; font-size: 11px; line-height: 1.45; }
+.search-review-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.search-review-card { display: grid; min-width: 0; align-content: start; gap: 6px; padding: 12px; border: 1px solid #e8ecf1; border-radius: 8px; background: #fff; }
+.search-review-card > span { color: #7c8795; font-size: 9px; font-weight: 700; letter-spacing: .55px; text-transform: uppercase; }
+.search-review-card > strong { overflow-wrap: anywhere; color: #2b3543; font-size: 11px; font-weight: 650; line-height: 1.45; }
+.search-review-card > small { overflow-wrap: anywhere; color: #778392; font-size: 10px; line-height: 1.5; }
+@keyframes step-enter { from { opacity: .65; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1180px) {
+  .search-step { justify-content: center; }
+  .search-step-copy small { display: none; }
+}
+@media (max-width: 760px) {
+  .search-stepper { gap: 2px; }
+  .search-step { justify-content: center; padding: 6px 2px; }
+  .search-step-copy { display: none; }
+  .step-content { min-height: 0; }
+  .stepper-footer { align-items: flex-start; flex-direction: column; }
+  .step-footer-actions { width: 100%; justify-content: flex-end; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .step-content { animation: none; }
+}

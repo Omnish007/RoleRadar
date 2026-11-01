@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+ <defs>
+  <linearGradient id="tile" x1="0" y1="0" x2="0.85" y2="1">
+   <stop offset="0" stop-color="#103F91"/><stop offset="0.45" stop-color="#092B68"/><stop offset="1" stop-color="#061735"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="76%" cy="25%" r="70%"><stop offset="0" stop-color="#168CFF" stop-opacity=".30"/><stop offset="1" stop-color="#168CFF" stop-opacity="0"/></radialGradient>
+  <linearGradient id="radar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#36E0E5"/><stop offset=".58" stop-color="#159AFF"/><stop offset="1" stop-color="#1761D5"/></linearGradient>
+  <linearGradient id="letter" x1="0" y1="0" x2=".2" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCEBFF"/></linearGradient>
+  <linearGradient id="sweep" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#19B9F5" stop-opacity="0"/><stop offset="1" stop-color="#55F1ED" stop-opacity=".72"/></linearGradient>
+  <clipPath id="tileClip"><rect x="18" y="18" width="988" height="988" rx="228"/></clipPath>
+  <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="14"/></filter>
+ </defs>
+ <g clip-path="url(#tileClip)">
+  <rect width="1024" height="1024" fill="url(#tile)"/>
+  <rect width="1024" height="1024" fill="url(#glow)"/>
+  <path d="M650 360 L866 150 A292 292 0 0 1 963 360 Z" fill="url(#sweep)" opacity=".30"/>
+  <circle cx="704" cy="355" r="270" fill="none" stroke="#1674D8" stroke-width="18" opacity=".46"/>
+  <circle cx="704" cy="355" r="208" fill="none" stroke="url(#radar)" stroke-width="20" opacity=".78"/>
+  <circle cx="704" cy="355" r="147" fill="none" stroke="#1678DD" stroke-width="13" opacity=".42"/>
+  <path d="M704 355 L875 184" fill="none" stroke="#36DDEB" stroke-width="25" stroke-linecap="round"/>
+  <circle cx="704" cy="355" r="25" fill="#22CBE8"/>
+  <circle cx="704" cy="355" r="42" fill="#22CBE8" opacity=".23" filter="url(#softGlow)"/>
+  <path d="M752 831Q883 831 950.5 892.0Q1018 953 1018 1071Q1018 1145 971.5 1179.5Q925 1214 825 1214H666L590 831ZM539 565 428 0H43L334 1493H903Q1149 1493 1276.0 1401.0Q1403 1309 1403 1130Q1403 949 1303.0 832.0Q1203 715 1032 698Q1110 682 1162.0 618.5Q1214 555 1253 424L1380 0H997L885 371Q851 482 802.5 523.5Q754 565 662 565Z" transform="translate(88 850) scale(.46 -.46)" fill="url(#letter)"/>
+  <path d="M25 220 Q80 30 270 18" stroke="#75C9FF" stroke-width="5" opacity=".16" fill="none"/>
+ </g>
+ <rect x="20" y="20" width="984" height="984" rx="226" fill="none" stroke="#FFFFFF" stroke-opacity=".12" stroke-width="4"/>
+</svg>

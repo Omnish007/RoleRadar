@@ -1,0 +1,50 @@
+RoleRadar focused product-quality update
+
+Scope
+- Refines the existing desktop visual language with quieter surfaces, restrained color, clearer hierarchy, consistent controls and reduced decorative treatment.
+- Strengthens the local AI search pipeline with a small-model-plus-deterministic-rules approach.
+- Preserves existing navigation, routes, database schemas, data models, workspace modules and user workflows. No new external AI provider or paid API is introduced.
+
+Changed files
+- apps/desktop/src/renderer/src/styles.css
+- apps/desktop/src/renderer/src/components/search-builder.tsx
+- apps/ai-service/app/experience_rules.py (new)
+- apps/ai-service/app/intent_rules.py (new)
+- apps/ai-service/app/location_rules.py (new)
+- apps/ai-service/app/salary_rules.py (new)
+- apps/ai-service/app/search_context_rules.py (new)
+- apps/ai-service/app/skill_rules.py (new)
+- apps/ai-service/app/graph.py
+- apps/ai-service/app/ollama.py
+- apps/ai-service/app/main.py
+- apps/ai-service/.env.example
+- apps/ai-service/tests/test_api.py
+- apps/ai-service/tests/test_intent_rules.py (new)
+- docs/DESIGN_SYSTEM.md
+- docs/AI_SEARCH_QUALITY.md (new)
+
+AI search behavior
+- Qwen performs structured role interpretation; deterministic parsing reconciles explicit constraints before returning the existing SearchIntent shape.
+- Explicit source text controls experience, location, skills, salary, work mode, employment type, exclusions, precision and posted-date limits.
+- Known stack acronyms (MERN, MEAN, PERN and MEVN) map to canonical roles and their component skills.
+- Optional null values are omitted at the Python-to-NestJS boundary to match the existing Zod contract.
+- The configured local model default is qwen3.5:2b-q4_K_M. Confirm the root .env points to the same installed Ollama tag; the patch does not overwrite .env or secrets.
+
+Validation completed in the authoring environment
+- Python AI tests: 49 passed.
+- Python source compilation: passed.
+- TypeScript/TSX syntax transpilation for the changed search-builder component: passed.
+- Workspace structure, client API surface and 300-line source policy checks: passed.
+- The local Ollama model, Electron runtime, full desktop semantic typecheck and end-to-end UI were not run in this authoring environment. Re-run them on the target Ubuntu machine before release.
+
+Run from project root
+  pnpm --filter @roleradar/contracts build
+  pnpm --filter @roleradar/api typecheck
+  pnpm --filter @roleradar/desktop typecheck
+  cd apps/ai-service && .venv/bin/python -m pytest -q
+
+Restart the AI service after changing its source or model settings:
+  pnpm dev:ai
+
+Then start the existing desktop and API development workflow:
+  pnpm dev

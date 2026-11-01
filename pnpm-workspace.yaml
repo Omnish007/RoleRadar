@@ -1,0 +1,7 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# Keep injected workspace copies in sync with generated dist files after builds.
+syncInjectedDepsAfterScripts:
+  - build

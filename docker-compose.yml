@@ -1,0 +1,27 @@
+services:
+  mongodb:
+    image: mongo:8
+    container_name: roleradar-mongodb
+    restart: unless-stopped
+    ports: ["127.0.0.1:27017:27017"]
+    volumes: ["mongodb_data:/data/db"]
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  redis:
+    image: redis:7-alpine
+    container_name: roleradar-redis
+    restart: unless-stopped
+    ports: ["127.0.0.1:6379:6379"]
+    volumes: ["redis_data:/data"]
+    command: ["redis-server", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+volumes:
+  mongodb_data:
+  redis_data:

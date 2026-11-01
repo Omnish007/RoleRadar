@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
+ <defs><linearGradient id="wordmarkBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18C7E2"/><stop offset="1" stop-color="#165DCB"/></linearGradient></defs>
+ <g transform="translate(0 0) scale(.66)">
+  <circle cx="113" cy="65" r="52" fill="none" stroke="#1B84E4" stroke-width="7" opacity=".32"/>
+  <circle cx="113" cy="65" r="38" fill="none" stroke="url(#wordmarkBlue)" stroke-width="7"/>
+  <path d="M113 65 L150 28" stroke="#22CFE8" stroke-width="8" stroke-linecap="round"/><circle cx="113" cy="65" r="8" fill="#22CFE8"/>
+  <path d="M752 831Q883 831 950.5 892.0Q1018 953 1018 1071Q1018 1145 971.5 1179.5Q925 1214 825 1214H666L590 831ZM539 565 428 0H43L334 1493H903Q1149 1493 1276.0 1401.0Q1403 1309 1403 1130Q1403 949 1303.0 832.0Q1203 715 1032 698Q1110 682 1162.0 618.5Q1214 555 1253 424L1380 0H997L885 371Q851 482 802.5 523.5Q754 565 662 565Z" transform="translate(12 157) scale(.092 -.092)" fill="#102A55"/>
+ </g>
+ <text x="132" y="78" font-family="Inter, ui-sans-serif, system-ui, Arial, sans-serif" font-size="58" font-weight="750" letter-spacing="-2" fill="#102A55">RoleRadar</text>
+</svg>

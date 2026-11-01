@@ -1,0 +1,10 @@
+RoleRadar brand palette
+
+Midnight navy: #061735
+Deep blue: #092B68
+Primary blue: #1664D9
+Radar cyan: #22CBE8
+Light surface: #F5F8FC
+Dark text: #102A55
+
+Use icon.svg/icon.png for application launchers and install packages. Use logo-light.svg on light surfaces and logo-dark.svg on dark surfaces. Use brand-mark.svg where only the symbol fits. Keep at least 12% clear space around the mark and do not recolor or add shadows to the logo files.

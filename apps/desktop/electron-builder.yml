@@ -1,5 +1,6 @@
 appId: com.roleradar.desktop
 productName: RoleRadar
+executableName: roleradar
 artifactName: ${productName}-${version}-${arch}.${ext}
 directories:
   output: release
@@ -9,6 +10,8 @@ files:
   - package.json
   - '!**/*.map'
 linux:
+  maintainer: "Omnish Kundariya <omnish007@gmail.com>"
+  syncDesktopName: true
   category: Utility
   icon: build/icons/
   target:

@@ -5,8 +5,8 @@
   "main": "out/main/index.js",
   "scripts": {
     "dev": "install-electron --no && electron-vite dev",
-    "build": "bash ../../scripts/build-ai-service.sh && node ../../scripts/prepare-sidecar.cjs && pnpm --filter @roleradar/api build && pnpm --filter @roleradar/api --prod deploy ./sidecar/api && pnpm --filter @roleradar/contracts build && electron-vite build && electron-builder --linux AppImage deb",
-    "build:dir": "bash ../../scripts/build-ai-service.sh && node ../../scripts/prepare-sidecar.cjs && pnpm --filter @roleradar/api build && pnpm --filter @roleradar/api --prod deploy ./sidecar/api && pnpm --filter @roleradar/contracts build && electron-vite build && electron-builder --dir",
+    "build": "bash ../../scripts/build-ai-service.sh && node ../../scripts/prepare-sidecar.cjs && pnpm --filter @roleradar/api build && pnpm --filter @roleradar/api --prod deploy ./sidecar/api && pnpm --filter @roleradar/contracts build && electron-vite build && node ../../scripts/verify-electron-output.cjs && electron-builder --linux AppImage deb",
+    "build:dir": "bash ../../scripts/build-ai-service.sh && node ../../scripts/prepare-sidecar.cjs && pnpm --filter @roleradar/api build && pnpm --filter @roleradar/api --prod deploy ./sidecar/api && pnpm --filter @roleradar/contracts build && electron-vite build && node ../../scripts/verify-electron-output.cjs && electron-builder --dir",
     "typecheck": "pnpm --filter @roleradar/contracts build && tsc -p tsconfig.json --noEmit && tsc -p tsconfig.node.json --noEmit",
     "lint": "pnpm typecheck",
     "test": "pnpm --filter @roleradar/contracts build && vitest run"
@@ -40,5 +40,16 @@
     "@vitejs/plugin-react": "^6.1.2",
     "shadcn": "^4.23.0",
     "@roleradar/contracts": "workspace:*"
+  },
+  "desktopName": "com.roleradar.desktop",
+  "description": "A local-first desktop workspace for intelligent job discovery, application tracking, career organization, and AI-assisted search powered by local LLMs.",
+  "homepage": "https://github.com/Omnish007/RoleRadar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Omnish007/RoleRadar.git"
+  },
+  "author": {
+    "name": "Omnish Kundariya",
+    "email": "omnish007@gmail.com"
   }
 }

@@ -18,8 +18,14 @@ const allowedHosts = new Set([
   "linkedin.com", "naukri.com", "indeed.com", "indeed.co.in", "wellfound.com"
 ]);
 
+function rendererEntryPath(): string {
+  return isDevelopment
+    ? join(__dirname, "../renderer/index.html")
+    : join(app.getAppPath(), "out", "renderer", "index.html");
+}
+
 function rendererEntryUrl(): string {
-  return pathToFileURL(join(__dirname, "../renderer/index.html")).toString();
+  return pathToFileURL(rendererEntryPath()).toString();
 }
 
 function isTrustedSender(url: string): boolean {
@@ -138,7 +144,7 @@ function createWindow() {
   if (isDevelopment) {
     void window.loadURL("http://localhost:5173").catch(error => console.error("[renderer navigation]", error));
   } else {
-    void window.loadFile(join(__dirname, "../renderer/index.html")).catch(error => console.error("[renderer navigation]", error));
+    void window.loadFile(rendererEntryPath()).catch(error => console.error("[renderer navigation]", error));
   }
 }
 

@@ -11,6 +11,6 @@ export default defineConfig({
     resolve: { alias: { "@": path.resolve(__dirname, "src/renderer/src") } },
     plugins: [react(), tailwindcss()],
     base: "./",
-    build: { outDir: "../../out/renderer", emptyOutDir: true }
+    build: { outDir: "out/renderer", emptyOutDir: true }
   }
 });
